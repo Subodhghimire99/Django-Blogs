@@ -6,3 +6,22 @@ a	{
 .all{
     /*line-height:40px;	*/
 }
+#navbar{
+	border:2px solid black;
+	line-height:40px;
+	padding:0px,5px,0px,5px;
+	text-align:center;
+	background:ghostwhite;
+}
+
+#navbar ul{
+    padding:0px;
+    margin:0px;
+    width:100%;
+}
+#navbar ul li{
+	display:inline-block;
+	padding:0px 10px;
+	margin:2px 5px;
+	background:grey;
+}

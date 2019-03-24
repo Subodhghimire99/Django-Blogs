@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {% block input_output %}
-<h2>All individual data in Details Queryset:</h2>
+<h2>List of the Registered users</h2>
+<p>This is the list of the registered users in the database <br>You can go indetail by clicking on them.</p>
 <p style="line-height: 40px;font-size: 24px;">
 {% for instance in a %}
 {{instance.id}}&nbsp-----><a href="{{ instance.get_absolute_url }}">{{instance.Name}}</a><br>

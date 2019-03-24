@@ -1,10 +1,10 @@
 {% extends 'base.html'%}
 {% block input_output %}
-<h1>Input view</h1>
-<h3>Input operations for form</h3>
-
+<div class="input-form">
+	<h3>This is form for registering in database</h3>
 <form action="." method="POST">{% csrf_token %}
 	{{ f.as_p }}
 	<input type="submit" value="save">
 </form>
+</div>
 {% endblock %}

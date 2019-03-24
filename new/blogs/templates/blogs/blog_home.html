@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-<h2>Blogs</h2>
-<h4>This is blogs</h4>
-<br>
 {%  block content %}
-<a href="/blogs/upload/">Uplod new blog</a>
-<h2>New Posts</h2>
+<h2>This is Blogs app inside the project</h2>
+<p>You can upload your new blog by clicking <a href="/blogs/upload/">here</a></p>
+<h4>Below shown are the title of inserted blogs</h4>
+<p>Click on them to go in detail about the blog</p>
 	{%for items in all_posts%}
-		<p>{{items.id}} : <a href="{{items.get_absolute_url}}">{{items.title}}</a></p>
+		<p>** : <a href="{{items.get_absolute_url}}">{{items.title}}</a></p>
 	{%endfor%}
 {% endblock %}
+</div>
 </body>
 </html>
