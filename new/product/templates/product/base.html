@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>base</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "product/base.css" %}" type="text/css">
+</head>
+<body>
+		{% block input_output %}
+			<h1> <font color="red">Base page</font></h1>
+			<form action="." method="POST">{% csrf_token %}
+				<p style="margin-bottom:20px;font-size: 24px; ">Enter a  new object by clicking <a href="/product/input/">here</a></p>
+			</form>
+			<p>You can see data by clicking <a href="/product/display/">here</a></p>
+		{% endblock%}
+		{% block list%}
+		{% endblock %}
+
+</body>
+</html>

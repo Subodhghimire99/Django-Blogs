@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>base</title>
+    	{% load static %}
+	<link rel="stylesheet" href="{% static "product/base.css" %}" type="text/css">
+	<link rel="stylesheet" href="{% static "blogs/blogdetail.css" %}" type="text/css">
+</head>
+<style>
+#navbar{
+	border:2px solid black;
+	line-height:40px;
+	padding:0px,5px,0px,5px;
+	text-align:center;
+	background:ghostwhite;
+}
+
+#navbar ul{
+    padding:0px;
+    margin:0px;
+    width:100%;
+}
+#navbar ul li{
+	display:inline-block;
+	padding:0px 10px;
+	margin:2px 5px;
+	background:grey;
+}
+</style>
+<body>
+	<div id="navbar">
+		<ul>
+			<li> <a href="/">Home</a></li>
+			<li><a href="/blogs/">Blogs</a></li>
+			
+		</ul>
+	</div>
+		{% block content %}
+		{% endblock %}	
+		{% block list%}
+		{% endblock %}
+		<p style="margin-bottom:20px;font-size: 24px; ">Enter a  new object by clicking <a href="/product/input/">here</a></p>
+		{% block input_output %}
+			<h1> <font color="red">Home page</font></h1>
+			<form action="." method="POST">{% csrf_token %}
+				
+			</form>
+			<p>You can see data by clicking <a href="/product/display/">here</a></p>
+		{% endblock%}
+
+</body>
+</html>

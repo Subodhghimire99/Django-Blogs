@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<h2>Blogs</h2>
+<h4>This is blogs</h4>
+<br>
+{%  block content %}
+<a href="/blogs/upload/">Uplod new blog</a>
+<h2>New Posts</h2>
+	{%for items in all_posts%}
+		<p>{{items.id}} : <a href="{{items.get_absolute_url}}">{{items.title}}</a></p>
+	{%endfor%}
+{% endblock %}
+</body>
+</html>

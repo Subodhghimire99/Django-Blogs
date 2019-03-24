@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% block input_output %}
+<h2>All individual data in Details Queryset:</h2>
+<p style="line-height: 40px;font-size: 24px;">
+{% for instance in a %}
+{{instance.id}}&nbsp-----><a href="{{ instance.get_absolute_url }}">{{instance.Name}}</a><br>
+{% endfor %}
+</p>
+{%endblock%}

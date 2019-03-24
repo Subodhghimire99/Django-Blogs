@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{%  block content %}
+<div class="blogdetail"></div>
+	<h2>{{a.title}}</h2>
+	<br>
+	<img src="/media/{{a.photo}}" height=200 width=400>
+	<p>{{a.desc}}</p>
+	<form action="." method="POST">{% csrf_token %}
+		<input type="submit" value="delete this post">
+	</form>
+</div>
+{% endblock %}
