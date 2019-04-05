@@ -5,7 +5,7 @@ from .models import Detail
 class register_form(forms.ModelForm):
 	Description=forms.CharField(widget=forms.Textarea(
 			attrs={
-				"rows":14,
+				"rows":6,
 				"columns":50,
 			}
 		)

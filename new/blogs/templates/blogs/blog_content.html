@@ -1,5 +1,5 @@
 {% extends 'blogs/blog_home.html' %}
-{% block content %}
+{% block home %}
 <h5>New post</h5>
 	<form action="." method = 'POST' enctype="multipart/form-data">{% csrf_token %}
 			{{form.as_p}}

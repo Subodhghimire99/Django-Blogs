@@ -5,6 +5,20 @@
     {% load static %}
 	<link rel="stylesheet" href="{% static "product/base.css" %}" type="text/css">
 	<link rel="stylesheet" href="{% static "blogs/blogdetail.css" %}" type="text/css">
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
 </head>
 <style type="text/css">
 	a{
@@ -12,63 +26,64 @@
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:crimson;
     }
-#navbar{
-	/*border:2px solid black;*/
-	line-height:40px;
-	padding:0px,5px,0px,5px;
-	text-align:left;
-	background:black;
-}
-#navbar ul{
-    padding:0px;
-    margin:0px;
-    width:100%;
-}
-#navbar ul li{
-	display:inline-block;
-	padding:0px 10px;
-	margin:0PX;
-}
-.input-form{
-	/*border:2px dotted green;*/
-	padding:2px 5px 5px 50px;
-	background-color:grey;
-}
-.input-form input{
-	border:none;
-	border-radius:20px;
-	margin-top: 5px;
-	color:blue;
-	height:20px;
-	width:300px;
-}
-.input-form label{
-	font-size:20px;
-	margin-right:20px;
-}
+
+
+    previous style
 </style>
 <body>
-	<h1> <font color="red">Home page</font></h1>
-	<h2>Welcome !</h2>
-		<p>This is example of How we can use django to insert, delete, display the data in the database</p>
-	<div id="navbar">
-		<ul>
-			<li> <a href="/">Home</a></li>
-			<li><a href="/blogs/">Blogs</a></li>
-			<li><a href="/product/input/">Register</a></li>
-			<li><a href="/product/display/">Registered users</a></li>
-		</ul>
-	</div>
+
+	<div class="container">
+<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/blogs/">Blogs</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Users</a>
+		      </li>
+<!-- Dropdown -->
+		      <li class="nav-item">
+		        <div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Register
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="/product/input/">Create new</a>
+				    <a class="dropdown-item" href="/product/display/">Show registered users</a>
+				  </div>
+				</div>
+		      </li>    
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+		  </div>
+		</nav>
+
 		{% block home %}
-		{% endblock %}
-		{% block content %}
-		{% endblock %}	
-		{% block list%}
-		{% endblock %}
-		{% block input_output %}
-			<form action="." method="POST">{% csrf_token %}
-				
-			</form>
-		{% endblock%}
+			<div class="jumbotron">
+			  <h1 class="display-4">About this project</h1>
+			  <p class="lead">This page is made to show how we can save data into the database. This is first django project by me.</p>
+			  <hr class="my-4">
+			  <p>This site project also helps you to know how to manage our templates and static files. Images are also stored in database.</p>
+			  This site contains the following things.
+			  <ul>
+			  	<li>Forms</li>
+			  	<li>Small Blog app</li>
+			  </ul>
+			  <p>User login and authentacion is yet to be managed.</p>
+			  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+			</div>
+		{% endblock %}		
 </body>
 </html>
