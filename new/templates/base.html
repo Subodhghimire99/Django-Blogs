@@ -44,11 +44,12 @@
 		      <li class="nav-item active">
 		        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 		      </li>
+		      {% if user.is_authenticated %}
 		      <li class="nav-item">
 		        <a class="nav-link" href="/blogs/">Blogs</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="/product/display/">Users</a>
+		        <a class="nav-link" href="{% url 'users' %}">Users</a>
 		      </li>
 <!-- Dropdown -->
 		      <li class="nav-item">
@@ -58,19 +59,23 @@
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a class="dropdown-item" href="/product/input/">Create new</a>
-				    <a class="dropdown-item" href="{% url 'users' %}">Show registered users</a>
+				    <a class="dropdown-item" href="/product/display/">Show registered users</a>
 				  </div>
 				</div>
+				{% else%}
 		      </li>
 		       <li class="nav-item">
 		        <a class="nav-link" href="{% url 'signup' %}">signup</a>
 		      </li>   
 		       <li class="nav-item">
-		        <a class="nav-link" href="#">Log in</a>
+		        <a class="nav-link" href="{% url 'login' %}">Log in</a>
 		      </li>    
+		      {% endif %}
+		      {% if user.is_authenticated %}
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Log out</a>
-		      </li>   
+		        <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+		      </li>  
+		      {% endif %} 
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -80,6 +85,16 @@
 		</nav>
 
 		{% block home %}
+		{% if user.is_authenticated%}
+			<div class="container">
+				<br>
+				<h1>Thank you for visiting the site.</h1>
+				<br>
+				<hr>
+				<p>Now, <strong>you are logged in</strong> so you can try and access the navigation link that appeared in the navbar</p>
+			</div>
+
+		{% else %}
 			<div class="jumbotron">
 			  <h1 class="display-4">About this project</h1>
 			  <p class="lead">This page is made to show how we can save data into the database. This is first django project by me.</p>
@@ -90,9 +105,9 @@
 			  	<li>Forms</li>
 			  	<li>Small Blog app</li>
 			  </ul>
-			  <p>User login and authentacion is yet to be managed.</p>
-			  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+			  <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Try site</a>
 			</div>
+			{% endif %}
 		{% endblock %}		
 </body>
 </html>

@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {%  block home %}
-<div class="blogdetail"></div>
-	<h2>{{a.title}}</h2>
-	<p>{{a.desc}}</p>
-	<form action="." method="POST">{% csrf_token %}
-		<input type="submit" value="delete this post">
-	</form>
-	<br>
-	<img src="/media/{{a.photo}}" height=400 width=auto>
-</div>S
+
+	
+
+<div class="blogdetail" style="position:absolute;top:10%;left:15%;">
+		<div class="container">
+		<div class="card" style="width: 32rem;">
+		  <img class="card-img-top" src="/media/{{a.photo}}" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">{{a.title}}</h5>
+		    <p class="card-text">{{a.desc}}</p>
+		  </div>
+		  	<form action="." method="POST">{% csrf_token %}
+				<!-- <button type="submit" class="btn btn-outline-success float-right">Delete</button> -->
+				<button type="submit" class="btn btn-danger float-right">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock %}

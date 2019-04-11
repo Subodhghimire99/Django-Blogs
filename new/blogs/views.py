@@ -16,7 +16,7 @@ def new_posts(request,*args,**kwargs):
 	input_data = new_blog_form(request.POST or None, request.FILES or None)
 	if input_data.is_valid():
 		input_data.save()
-		input_data = new_blog_form()
+		return redirect('/blogs/')
 	context = {
 			"form":input_data,
 		}

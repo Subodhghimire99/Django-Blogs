@@ -6,7 +6,7 @@ from product.views import base_view,signup,registered
 
 urlpatterns = [
 		path('accounts/',include('django.contrib.auth.urls')),
-		path('signup/',signup,name='signup'),
+		path('accounts/signup/',signup,name='signup'),
         path('product/',include('product.urls')),
         path('blogs/',include('blogs.urls')),
         path('',base_view,name='home'),
