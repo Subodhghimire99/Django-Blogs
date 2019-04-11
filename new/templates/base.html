@@ -48,7 +48,7 @@
 		        <a class="nav-link" href="/blogs/">Blogs</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Users</a>
+		        <a class="nav-link" href="/product/display/">Users</a>
 		      </li>
 <!-- Dropdown -->
 		      <li class="nav-item">
@@ -58,10 +58,19 @@
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a class="dropdown-item" href="/product/input/">Create new</a>
-				    <a class="dropdown-item" href="/product/display/">Show registered users</a>
+				    <a class="dropdown-item" href="{% url 'users' %}">Show registered users</a>
 				  </div>
 				</div>
+		      </li>
+		       <li class="nav-item">
+		        <a class="nav-link" href="{% url 'signup' %}">signup</a>
+		      </li>   
+		       <li class="nav-item">
+		        <a class="nav-link" href="#">Log in</a>
 		      </li>    
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Log out</a>
+		      </li>   
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

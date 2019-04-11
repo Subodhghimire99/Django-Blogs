@@ -1,5 +1,9 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse,Http404
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 from .models import Detail
 from .forms import register_form
 from django import forms
@@ -88,3 +92,21 @@ def dymnamic_look(request, i):
 # 		"b":instance
 # 	}
 # 	return render(request,"all.html",context)
+
+
+
+def signup(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			print(UserCreationForm(request.POST))
+			form.save()
+			form = UserCreationForm()
+			return redirect('/')
+	else:
+		form = UserCreationForm()
+	return render(request, 'signup.html', {'form':form})
+
+def registered(request):
+	count = User.objects.all()
+	return render(request, 'users.html', {'count':count})

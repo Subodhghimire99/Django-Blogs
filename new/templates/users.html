@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block home %}
+	<h4>Registered users in this website.</h4>
+	{% for items in count %}
+		<li>{{items.username}}</li>
+	{% endfor %}
+{% endblock %}
