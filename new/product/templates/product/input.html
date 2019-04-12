@@ -1,10 +1,15 @@
 {% extends 'base.html'%}
+{% load crispy_forms_tags %}
 {% block home %}
 <div class="input-form">
-	<h3>This is form for registering in database</h3>
-<form action="." method="POST">{% csrf_token %}
-	{{ f.as_p }}
-	<input type="submit" value="save">
-</form>
+<h3>This is form for registering in database</h3>
+<div class="row ml-5">
+	<div class="col-5">
+		<form action="." method="POST">{% csrf_token %}
+			{{ f|crispy }}
+			<input type="submit" value="save" class="btn btn-primary">
+		</form>
+	</div>
+</div>
 </div>
 {% endblock %}
