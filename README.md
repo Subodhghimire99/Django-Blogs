@@ -1,2 +1,3 @@
-# django-form
-simple example of django form
+# Django 2.0.7
+
+try it and give suggestions.
